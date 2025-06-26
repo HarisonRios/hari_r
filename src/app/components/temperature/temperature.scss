@@ -1,0 +1,97 @@
+.temperature-card {
+  padding: 1rem;
+  border-radius: 12px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 0.5s ease;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    z-index: 1;
+  }
+
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 2;
+    text-align: center;
+  }
+
+  &.morning {
+    background-image: url("https://www.melhoresdestinos.com.br/wp-content/uploads/2016/08/o-que-fazer-em-sao-paulo-capa2019-01.jpg");
+  }
+
+  &.afternoon {
+    background-image: url("https://blog.maxmilhas.com.br/wp-content/uploads/2020/07/raphael-fernandes-0uzG88fsp6Q-unsplash-scaled-770x450.jpg");
+  }
+
+  &.evening {
+    background-image: url("https://letsimage.s3.amazonaws.com/letsbook/211/destinos/2/1.jpg");
+  }
+
+  &.night {
+    background-image: url("https://unidospelavida.org.br/wp-content/uploads/2021/09/banner-site-ponte-estaiada.png");
+  }
+
+  .weather-icon {
+    font-size: 48px;
+    color: #ffffff;
+  }
+
+  .temperature-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+
+    h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    p {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .current-temp {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    .local-time {
+        font-size: 0.85rem;
+        color: #ddd;
+    }
+  }
+  
+  .temperature-loading, .temperature-error {
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      background-color: #242424;
+      border-radius: 12px;
+  }
+}
+

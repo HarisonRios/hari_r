@@ -1,0 +1,49 @@
+.discord-card {
+  display: flex;
+  gap: 1rem;
+  background: #2c2f33;
+  padding: 1rem;
+  border-radius: 12px;
+  color: white;
+  max-width: 400px;
+  align-items: center;
+}
+
+.avatar-container {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.status-indicator {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #2c2f33;
+
+  &.green { background-color: #43b581; }
+  &.yellow { background-color: #faa61a; }
+  &.red { background-color: #f04747; }
+  &.gray { background-color: #747f8d; }
+}
+
+.discord-info h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.discord-info p {
+  margin: 0.2rem 0 0.5rem;
+  color: #b9bbbe;
+}
+
+.activity {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+

@@ -1,12 +1,10 @@
-// app/layout.tsx
-import './styles/globals.scss';
 import React from 'react';
 
 export const metadata = {
   title: 'Isso é Trap - Mixtape',
   description: 'TRAP',
     icons: {
-    icon: '/favicon.jpg',
+    icon: '/public/trap.jpg',
   },
 };
 
