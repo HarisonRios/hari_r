@@ -41,7 +41,7 @@ export type DiscordData = {
 
 
 export const kvData = {
-  location: "São Paulo, Brasil",
+  location: "São Paulo, "+ "Brasil",
   latitude: -23.55,
   longitude: -46.63,
 };

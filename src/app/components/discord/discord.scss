@@ -1,7 +1,9 @@
 .discord-card {
   display: flex;
   gap: 1rem;
-  background: #2c2f33;
+  background: #1e1e1e;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid #333;
   padding: 1rem;
   border-radius: 12px;
   color: white;

@@ -16,12 +16,11 @@ export default function AboutMe() {
       </div>
       <div className="content-section">
         <h2>
-          Hari<span className="purple-text">son</span>
+          Harison <span className="purple-text">Rios</span>
         </h2>
         <p>
-          Engenheiro de dados de 19 anos de São Paulo, Brasil{' '}
-          <span role="img" aria-label="Bandeira do Brasil">🇧🇷</span>.
-          Trabalho com dados, porém por hobby desenvolvo software front-end e back-end.
+          Engenheiro de dados, 19 anos de São Paulo, Brasil 🇧🇷<br/>
+          Trabalho como engenheiro de dados em uma startup de tecnologia, porém por hobby desenvolvo softwares front-end e back-end.
           Amo tecnologia, jogos e rap e trap.
         </p>
       </div>

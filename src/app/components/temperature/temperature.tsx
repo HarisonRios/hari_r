@@ -5,13 +5,14 @@ import { WiDaySunny } from "react-icons/wi";
 import { TemperatureProps } from "@/app/components/constants/types";
 import "./temperature.scss";
 
-
 export default function Temperature({ locationData }: TemperatureProps) {
   const [temperature, setTemperature] = useState<number | null>(null);
   const [localTime, setLocalTime] = useState<string | null>(null);
   const [timeOfDay, setTimeOfDay] = useState<string>("day");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
+  const [timezone, setTimezone] = useState<string>("America/Sao_Paulo"); // fallback
 
   useEffect(() => {
     async function fetchWeather() {
@@ -36,6 +37,7 @@ export default function Temperature({ locationData }: TemperatureProps) {
         }
 
         const { latitude, longitude, timezone } = geoData.results[0];
+        setTimezone(timezone);
 
         const weatherRes = await fetch(
           `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&timezone=${timezone}`
@@ -44,15 +46,10 @@ export default function Temperature({ locationData }: TemperatureProps) {
 
         const temp = weatherData.current_weather.temperature;
         const time = weatherData.current_weather.time;
-
-        const hour = new Date(time).getHours();
-        const formattedTime = new Date(time).toLocaleTimeString("pt-BR", {
-          hour: "2-digit",
-          minute: "2-digit",
-        });
+        const date = new Date(time);
+        const hour = date.getHours();
 
         setTemperature(temp);
-        setLocalTime(formattedTime);
 
         // Define período do dia
         if (hour >= 5 && hour < 12) setTimeOfDay("morning");
@@ -69,15 +66,41 @@ export default function Temperature({ locationData }: TemperatureProps) {
     fetchWeather();
   }, [locationData]);
 
+  // Atualiza o relógio a cada segundo com base no timezone
+  useEffect(() => {
+    const interval = setInterval(() => {
+      try {
+        const now = new Date();
+        const formattedTime = now.toLocaleTimeString("pt-BR", {
+          timeZone: timezone,
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+        });
+        setLocalTime(formattedTime);
+      } catch (e) {
+        setLocalTime("Erro no horário");
+      }
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [timezone]);
+
   if (loading) return <p>Carregando temperatura...</p>;
   if (error) return <p>{error}</p>;
 
   return (
     <div className={`temperature-card ${timeOfDay}`}>
-      <WiDaySunny size={40} />
-      <div className="temperature-info">
-        <h3>{locationData.location}</h3>
-        <p>{temperature?.toFixed(1)}°C - <span className="local-time">{localTime}</span></p>
+      <div className="card-content">
+        <div className="card-top">
+          <WiDaySunny className="weather-icon" />
+          <div className="temperature">{temperature?.toFixed(1)}°C</div>
+        </div>
+
+        <div className="location">
+          {locationData.location}
+        </div>
+        <div className="local-time">{localTime}</div>
       </div>
     </div>
   );

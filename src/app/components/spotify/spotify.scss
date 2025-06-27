@@ -1,12 +1,42 @@
 .spotify-card {
   display: flex;
   align-items: center;
-  background: #1e1e1e;
+  background: rgba(30, 30, 30, 0.4);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid #333;
   color: #fff;
   padding: 1rem;
-  border-radius: 10px;
+  border-radius: 12px;
   max-width: 400px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  backdrop-filter: blur(6px);
+
+  &.offline {
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 2rem 1rem;
+
+    .spotify-icon {
+      font-size: 1.5rem;
+      color: #c084fc; // Roxo neon
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .spotify-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #d9aaff;
+    }
+
+    .spotify-subtitle {
+      font-size: 0.9rem;
+      color: #d9aaff;
+    }
+  }
 
   img {
     border-radius: 5px;

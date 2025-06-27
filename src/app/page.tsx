@@ -75,7 +75,9 @@ export default function Home() {
           </div>
 
           <div className="dashboard-item half">
-            {spotify ? <Spotify spotify={spotify} /> : <p>Spotify offline</p>}
+            <Spotify spotify={spotify} />
+            <br /> <br  />
+            {data && <Discord data={data} />}
           </div>
 
           <div className="dashboard-item half">
@@ -83,9 +85,12 @@ export default function Home() {
           </div>
 
           <div className="dashboard-item half">
-            {data && <Discord data={data} />}
+            
           </div>
         </div>
+        <footer>
+          <p>© 2025 Harison Rios. Todos os direitos reservados.</p>
+        </footer>
       </main>
     </>
   );

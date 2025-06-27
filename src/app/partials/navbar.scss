@@ -1,0 +1,59 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  background-color: #121212;
+  color: white;
+  width: 52%;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  .left {
+    font-size: 1.5rem;
+
+    .purple-text {
+      color: #9b59b6;
+      font-weight: bold;
+    }
+  }
+
+  .right {
+    display: flex;
+    gap: 1rem;
+    font-size: 1.5rem;
+
+    a {
+      color: white;
+      position: relative;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #9b59b6;
+      }
+
+      // Tooltip
+      &::after {
+        content: attr(aria-label);
+        position: absolute;
+        bottom: -22px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #333;
+        color: white;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 0.7rem;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease;
+        z-index: 10;
+      }
+
+      &:hover::after {
+        opacity: 1;
+      }
+    }
+  }
+}

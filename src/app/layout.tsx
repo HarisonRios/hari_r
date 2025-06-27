@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const metadata = {
-  title: 'Isso é Trap - Mixtape',
+  title: 'Harison Rios - Data Engineer & Developer',
   description: 'TRAP',
     icons: {
     icon: '/public/trap.jpg',

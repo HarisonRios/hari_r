@@ -1,12 +1,12 @@
 .tecnologias-card {
   background-color: #1a1a1a;
-  padding: 1.5rem; // reduzido
-  border-radius: 16px;
+  padding: 2rem; // reduzido
+  border-radius: 15px;
   color: white;
-  border: 2px solid #333;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   width: 100%;
   height: 100%;
+  border: 1px solid #333;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   
   &.half {
     grid-column: span 1;
@@ -15,7 +15,7 @@
   .tech-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1rem; // reduzido
+    gap: 0.5rem; // reduzido
     padding: 0.25rem;
 
     @media (max-width: 768px) {
@@ -38,7 +38,7 @@
     }
 
     .icon {
-      font-size: 35px; // menor
+      font-size: 30px; // menor
 
       &::after {
         content: attr(data-tooltip);

@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { SpotifyData } from "@/app/components/constants/types";
+import { FaMusic, FaTimesCircle } from "react-icons/fa";
 import Image from "next/image";
 import "./spotify.scss";
-
 
 function formatTime(ms: number) {
   const totalSeconds = Math.floor(ms / 1000);
@@ -13,16 +13,29 @@ function formatTime(ms: number) {
   return `${minutes}:${seconds.toString().padStart(2, "0")}`;
 }
 
-export default function Spotify({ spotify }: { spotify: SpotifyData }) {
+export default function Spotify({ spotify }: { spotify: SpotifyData | null }) {
   const [now, setNow] = useState(Date.now());
 
   useEffect(() => {
     const interval = setInterval(() => {
       setNow(Date.now());
-    }, 1000); 
+    }, 1000);
 
     return () => clearInterval(interval);
   }, []);
+
+if (!spotify) {
+  return (
+    <div className="spotify-card offline">
+      <div className="spotify-icon">
+        <FaMusic /> <FaTimesCircle />
+      </div>
+      <div className="spotify-title">Spotify Fechado</div>
+      <div className="spotify-subtitle">Nada tocando no momento</div>
+    </div>
+  );
+}
+
 
   const duration = spotify.timestamps.end - spotify.timestamps.start;
   const progress = Math.min(now - spotify.timestamps.start, duration);

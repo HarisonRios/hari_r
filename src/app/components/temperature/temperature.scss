@@ -1,17 +1,17 @@
 .temperature-card {
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: 12px;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  
-  width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid #333;
+  width: 350px;
   height: 200px;
   overflow: hidden;
   position: relative;
-
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -29,69 +29,62 @@
   }
 
   .card-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    padding: 0.5rem;
+  }
+
+  .card-top {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 0.5rem;
-    z-index: 2;
+    font-size: 1.5rem;
+
+    .weather-icon {
+      font-size: 2.5rem;
+    }
+
+    .temperature {
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+  }
+
+  .location {
+    text-shadow: 0 0 1px #9b59b6, 0 0 2px #9b59b6, 0 0 3px #9b59b6, 0 0 4px #9b59b6;
+    font-size: 1.5rem;
+    font-weight: bold;
     text-align: center;
   }
 
+  .local-time {
+    font-size: 0.9rem;
+    text-align: center;
+    color: #ccc;
+  }
+
   &.morning {
-    background-image: url("https://www.melhoresdestinos.com.br/wp-content/uploads/2016/08/o-que-fazer-em-sao-paulo-capa2019-01.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url("https://www.melhoresdestinos.com.br/wp-content/uploads/2016/08/o-que-fazer-em-sao-paulo-capa2019-01.jpg");
   }
 
   &.afternoon {
-    background-image: url("https://blog.maxmilhas.com.br/wp-content/uploads/2020/07/raphael-fernandes-0uzG88fsp6Q-unsplash-scaled-770x450.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url("https://blog.maxmilhas.com.br/wp-content/uploads/2020/07/raphael-fernandes-0uzG88fsp6Q-unsplash-scaled-770x450.jpg");
   }
 
   &.evening {
-    background-image: url("https://letsimage.s3.amazonaws.com/letsbook/211/destinos/2/1.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url("https://letsimage.s3.amazonaws.com/letsbook/211/destinos/2/1.jpg");
   }
 
   &.night {
-    background-image: url("https://unidospelavida.org.br/wp-content/uploads/2021/09/banner-site-ponte-estaiada.png");
-  }
-
-  .weather-icon {
-    font-size: 48px;
-    color: #ffffff;
-  }
-
-  .temperature-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-
-    h3 {
-      margin: 0;
-      font-size: 1.2rem;
-      font-weight: 600;
-    }
-
-    p {
-      margin: 0;
-      font-size: 1rem;
-    }
-
-    .current-temp {
-        font-size: 1.5rem;
-        font-weight: 700;
-    }
-
-    .local-time {
-        font-size: 0.85rem;
-        color: #ddd;
-    }
-  }
-  
-  .temperature-loading, .temperature-error {
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      background-color: #242424;
-      border-radius: 12px;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url("https://unidospelavida.org.br/wp-content/uploads/2021/09/banner-site-ponte-estaiada.png");
   }
 }
-
