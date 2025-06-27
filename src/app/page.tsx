@@ -92,6 +92,12 @@ export default function Home() {
           <p>© 2025 Harison Rios. Todos os direitos reservados.</p>
         </footer>
       </main>
+
+      {/* <div className="logAPi">
+        <h2>Dados da API</h2>
+        <p>Dados obtidos da API lanyard.rest:</p>
+        <pre>data: {JSON.stringify(data, null, 2)}</pre>
+      </div> */}
     </>
   );
 }

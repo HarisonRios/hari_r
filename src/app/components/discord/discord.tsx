@@ -34,10 +34,17 @@ export default function Discord({ data }: Props) {
 
   return (
     <div className="discord-card">
-      <div className="avatar-container">
-        <Image src={avatarUrl} alt="Avatar" width={80} height={80} />
-        <span className={`status-indicator ${getStatusColor()}`}></span>
+      <div className="discord-icon">
+        <BsDiscord />
       </div>
+
+<div className="avatar-wrapper">
+  <div className="avatar-container">
+    <Image src={avatarUrl} alt="Avatar" width={80} height={80} />
+  </div>
+  <span className={`status-indicator ${getStatusColor()}`}></span>
+</div>
+
 
       <div className="discord-info">
         <h2>{user.global_name || user.username}</h2>

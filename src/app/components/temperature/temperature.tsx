@@ -75,7 +75,7 @@ export default function Temperature({ locationData }: TemperatureProps) {
           timeZone: timezone,
           hour: "2-digit",
           minute: "2-digit",
-          second: "2-digit",
+          // second: "2-digit", // Removido segundos para um layout mais limpo
         });
         setLocalTime(formattedTime);
       } catch (e) {
@@ -92,15 +92,20 @@ export default function Temperature({ locationData }: TemperatureProps) {
   return (
     <div className={`temperature-card ${timeOfDay}`}>
       <div className="card-content">
-        <div className="card-top">
+        {/* Lado esquerdo: Ícone e Temperatura */}
+        <div className="left-side">
           <WiDaySunny className="weather-icon" />
           <div className="temperature">{temperature?.toFixed(1)}°C</div>
         </div>
 
-        <div className="location">
-          {locationData.location}
+        {/* Linha divisória */}
+        <div className="divider"></div>
+
+        {/* Lado direito: Localização e Hora Local */}
+        <div className="right-side">
+          <div className="location">{locationData.location}</div>
+          <div className="local-time">{localTime}</div>
         </div>
-        <div className="local-time">{localTime}</div>
       </div>
     </div>
   );

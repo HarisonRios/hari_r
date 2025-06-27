@@ -18,7 +18,7 @@
   transition: background-image 0.5s ease;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -33,38 +33,56 @@
     z-index: 2;
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 0.5rem;
+    display: flex; /* Adiciona flex para as colunas */
+    justify-content: center; /* Centraliza as colunas */
+    align-items: center; /* Alinha verticalmente */
+    gap: 1rem; /* Espaçamento entre as colunas */
   }
 
-  .card-top {
+  .left-side {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    font-size: 1.5rem;
+    justify-content: center;
+    padding-right: 1rem; /* Espaço antes do divisor */
+  }
 
-    .weather-icon {
-      font-size: 2.5rem;
-    }
+  .right-side {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha o texto à esquerda na coluna direita */
+    justify-content: center;
+    padding-left: 1rem; /* Espaço depois do divisor */
+  }
 
-    .temperature {
-      font-weight: 700;
-      font-size: 1.5rem;
-    }
+  .divider {
+    width: 1px;
+    height: 80%; /* Altura da linha divisória */
+    background-color: rgba(255, 255, 255, 0.3); /* Cor da linha divisória */
+  }
+
+  .weather-icon {
+    font-size: 4rem; /* Aumentei o ícone para destaque */
+    margin-bottom: 0.5rem;
+  }
+
+  .temperature {
+    font-weight: 700;
+    font-size: 2.5rem; /* Aumentei a temperatura para destaque */
   }
 
   .location {
-    text-shadow: 0 0 1px #9b59b6, 0 0 2px #9b59b6, 0 0 3px #9b59b6, 0 0 4px #9b59b6;
-    font-size: 1.5rem;
+    text-shadow: 0 0 1px #9b59b6, 0 0 2px #9b59b6, 0 0 3px #9b59b6,
+      0 0 4px #9b59b6;
+    font-size: 1.5rem; /* Mantive o tamanho da fonte */
     font-weight: bold;
-    text-align: center;
+    text-align: left; /* Alinha à esquerda */
+    margin-bottom: 0.2rem; /* Espaço entre localização e hora */
   }
 
   .local-time {
-    font-size: 0.9rem;
-    text-align: center;
+    font-size: 1.2rem; /* Aumentei o tamanho da fonte da hora */
+    text-align: left; /* Alinha à esquerda */
     color: #ccc;
   }
 
