@@ -11,6 +11,7 @@ import Temperature from "./components/temperature/temperature";
 
 import "../styles/globals.scss";
 import Navbar from "./partials/navbar";
+import Terminal from "./components/terminal/terminal";
 
 export default function Home() {
   const [data, setData] = useState<any>(null);
@@ -85,7 +86,7 @@ export default function Home() {
           </div>
 
           <div className="dashboard-item half">
-            
+            <Terminal />
           </div>
         </div>
         <footer>

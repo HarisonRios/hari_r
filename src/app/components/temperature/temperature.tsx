@@ -12,7 +12,7 @@ export default function Temperature({ locationData }: TemperatureProps) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const [timezone, setTimezone] = useState<string>("America/Sao_Paulo"); // fallback
+  const [timezone, setTimezone] = useState<string>("America/Sao_Paulo");
 
   useEffect(() => {
     async function fetchWeather() {
@@ -51,7 +51,6 @@ export default function Temperature({ locationData }: TemperatureProps) {
 
         setTemperature(temp);
 
-        // Define período do dia
         if (hour >= 5 && hour < 12) setTimeOfDay("morning");
         else if (hour >= 12 && hour < 18) setTimeOfDay("afternoon");
         else if (hour >= 18 && hour < 22) setTimeOfDay("evening");
@@ -66,7 +65,6 @@ export default function Temperature({ locationData }: TemperatureProps) {
     fetchWeather();
   }, [locationData]);
 
-  // Atualiza o relógio a cada segundo com base no timezone
   useEffect(() => {
     const interval = setInterval(() => {
       try {
@@ -75,7 +73,7 @@ export default function Temperature({ locationData }: TemperatureProps) {
           timeZone: timezone,
           hour: "2-digit",
           minute: "2-digit",
-          // second: "2-digit", // Removido segundos para um layout mais limpo
+          second: "2-digit",
         });
         setLocalTime(formattedTime);
       } catch (e) {
@@ -91,21 +89,15 @@ export default function Temperature({ locationData }: TemperatureProps) {
 
   return (
     <div className={`temperature-card ${timeOfDay}`}>
-      <div className="card-content">
-        {/* Lado esquerdo: Ícone e Temperatura */}
-        <div className="left-side">
-          <WiDaySunny className="weather-icon" />
-          <div className="temperature">{temperature?.toFixed(1)}°C</div>
-        </div>
+      <div className="weather-icon">
+        <WiDaySunny />
+      </div>
 
-        {/* Linha divisória */}
-        <div className="divider"></div>
+      <div className="temperature">{temperature?.toFixed(1)}°C</div>
 
-        {/* Lado direito: Localização e Hora Local */}
-        <div className="right-side">
-          <div className="location">{locationData.location}</div>
-          <div className="local-time">{localTime}</div>
-        </div>
+      <div className="center-info">
+        <div className="location">{locationData.location}</div>
+        <div className="local-time">{localTime}</div>
       </div>
     </div>
   );

@@ -20,7 +20,7 @@
 
     .spotify-icon {
       font-size: 1.5rem;
-      color: #c084fc; // Roxo neon
+      color: #c084fc;
       display: flex;
       align-items: center;
       gap: 4px;
@@ -45,6 +45,14 @@
   .spotify-info {
     margin-left: 1rem;
     flex: 1;
+    min-width: 0;
+
+    h2,
+    p {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
 
     h2 {
       font-size: 1.1rem;

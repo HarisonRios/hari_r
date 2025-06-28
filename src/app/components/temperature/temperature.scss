@@ -1,89 +1,66 @@
 .temperature-card {
+  position: relative;
+  width: 350px;
+  height: 200px;
   padding: 1.5rem;
   border-radius: 12px;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border: 1px solid #333;
-  width: 350px;
-  height: 200px;
-  overflow: hidden;
-  position: relative;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  overflow: hidden;
   transition: background-image 0.5s ease;
 
   &::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     border-radius: 12px;
+    background: rgba(0, 0, 0, 0.6);
     z-index: 1;
   }
 
-  .card-content {
-    position: relative;
+  .center-info {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 2;
-    width: 100%;
-    height: 100%;
-    display: flex; /* Adiciona flex para as colunas */
-    justify-content: center; /* Centraliza as colunas */
-    align-items: center; /* Alinha verticalmente */
-    gap: 1rem; /* Espaçamento entre as colunas */
-  }
+    text-align: center;
 
-  .left-side {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-right: 1rem; /* Espaço antes do divisor */
-  }
+    .location {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-shadow: 0 0 3px #9b59b6, 0 0 6px #9b59b6;
+      margin-bottom: 0.2rem;
+    }
 
-  .right-side {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Alinha o texto à esquerda na coluna direita */
-    justify-content: center;
-    padding-left: 1rem; /* Espaço depois do divisor */
-  }
-
-  .divider {
-    width: 1px;
-    height: 80%; /* Altura da linha divisória */
-    background-color: rgba(255, 255, 255, 0.3); /* Cor da linha divisória */
-  }
-
-  .weather-icon {
-    font-size: 4rem; /* Aumentei o ícone para destaque */
-    margin-bottom: 0.5rem;
+    .local-time {
+      font-size: 1rem;
+      color: #ccc;
+    }
   }
 
   .temperature {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
     font-weight: 700;
-    font-size: 2.5rem; /* Aumentei a temperatura para destaque */
+    font-size: 1rem;
+    z-index: 2;
   }
 
-  .location {
-    text-shadow: 0 0 1px #9b59b6, 0 0 2px #9b59b6, 0 0 3px #9b59b6,
-      0 0 4px #9b59b6;
-    font-size: 1.5rem; /* Mantive o tamanho da fonte */
-    font-weight: bold;
-    text-align: left; /* Alinha à esquerda */
-    margin-bottom: 0.2rem; /* Espaço entre localização e hora */
-  }
-
-  .local-time {
-    font-size: 1.2rem; /* Aumentei o tamanho da fonte da hora */
-    text-align: left; /* Alinha à esquerda */
-    color: #ccc;
+  .weather-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    z-index: 2;
   }
 
   &.morning {

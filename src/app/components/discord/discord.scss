@@ -60,16 +60,27 @@
 }
 
 
+.discord-info {
+  min-width: 0; 
 
-.discord-info h2 {
-  margin: 0;
-  font-size: 1.2rem;
+  h2, p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+
+  p {
+    margin: 0.2rem 0 0.5rem;
+    color: #b9bbbe;
+  }
 }
 
-.discord-info p {
-  margin: 0.2rem 0 0.5rem;
-  color: #b9bbbe;
-}
+
 
 .activity {
   display: flex;
