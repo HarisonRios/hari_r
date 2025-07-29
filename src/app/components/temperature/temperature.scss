@@ -1,20 +1,18 @@
 .temperature-card {
   position: relative;
-  width: 350px;
-  height: 200px;
-  padding: 1.5rem;
+  width: 30%;
+  max-width: 1000px;
+  height: 300px;
   border-radius: 12px;
+  background-size: cover;
   color: white;
   display: flex;
-  justify-content: center;
-  align-items: center;
+
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border: 1px solid #333;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  
+
   overflow: hidden;
-  transition: background-image 0.5s ease;
 
   &::before {
     content: "";

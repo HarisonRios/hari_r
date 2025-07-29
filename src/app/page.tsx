@@ -11,7 +11,7 @@ import Temperature from "./components/temperature/temperature";
 
 import "../styles/globals.scss";
 import Navbar from "./partials/navbar";
-import Terminal from "./components/terminal/terminal";
+import BackgroundEffect from "./components/background/BackgroundEffect";
 
 export default function Home() {
   const [data, setData] = useState<any>(null);
@@ -33,7 +33,6 @@ export default function Home() {
           setLoading(false);
           setTimeout(() => {
             setShowLoading(false);
-            // Ativa animação após loading
             if (mainRef.current) {
               mainRef.current.classList.add("reveal");
             }
@@ -54,46 +53,33 @@ export default function Home() {
 
   return (
     <>
-      {showLoading ? (
+      {/* {showLoading ? (
         <div className={`loading-screen ${!loading ? "fade-out" : ""}`}>
           <div className="spinner"></div>
           <p className="loading-text">
             {loading ? "Carregando dados..." : "Dados carregados!"}
           </p>
         </div>
-      ) : null}
+      ) : null} */}
+
+       <BackgroundEffect />
 
       <main className="main-content" ref={mainRef}>
         <Navbar />
+        <AboutMe />
+        
+        {data && <Temperature locationData={data.kv} />}
+        {/* <Spotify spotify={spotify} />
+        <Discord data={data} />
+        <Technology /> */}
 
-        <div className="dashboard-container">
-          <div className="dashboard-item full">
-            <AboutMe />
-          </div>
 
-          <div className="dashboard-item half">
-            <Technology />
-          </div>
 
-          <div className="dashboard-item half">
-            <Spotify spotify={spotify} />
-            <br /> <br  />
-            {data && <Discord data={data} />}
-          </div>
-
-          <div className="dashboard-item half">
-            {data && <Temperature locationData={data.kv} />}
-          </div>
-
-          <div className="dashboard-item half">
-            <Terminal />
-          </div>
-        </div>
         <footer>
           <p>© 2025 Harison Rios. Todos os direitos reservados.</p>
         </footer>
-      </main>
-
+    </main>
+  
       {/* <div className="logAPi">
         <h2>Dados da API</h2>
         <p>Dados obtidos da API lanyard.rest:</p>
@@ -102,3 +88,4 @@ export default function Home() {
     </>
   );
 }
+

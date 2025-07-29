@@ -7,6 +7,7 @@ export default function Navbar() {
      <nav className="navbar">
       <div className="left">
         <span className="purple-text">/</span>
+        <span className="purple-text">project</span>
       </div>
       <div className="right">
         <a href={github_url} target="_blank" rel="noopener noreferrer" aria-label="HarisonRios">

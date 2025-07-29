@@ -9,13 +9,48 @@
 
 html,
 body {
-  height: 100%;
-  width: 100%;
-  background-color: #121212;
-  color: white;
-  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  background-color: #0d0d1f;
+  min-height: 100%;
+  overflow-x: hidden;
+  font-family: system-ui, sans-serif;
 }
 
+.background-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.background-base {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at center, rgba(128, 0, 255, 0.1), transparent 300px),
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.05), transparent 200px),
+    radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.03), transparent 150px),
+    radial-gradient(circle at 60% 20%, rgba(255, 255, 255, 0.02), transparent 180px),
+    #0d0d1f;
+  background-blend-mode: screen;
+  z-index: 0;
+
+  transition: background 0.5s ease;
+  opacity: 0.8;
+  will-change: background-position;
+  overflow: hidden;
+ }
+
+
+
+.background-gradient {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: transparent;
+  transition: background-position 0.2s ease;
+}
 
 
 .main-content {
@@ -24,53 +59,21 @@ body {
   gap: 2rem;
   padding: 2rem;
   width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
 
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-
 .main-content.reveal {
   opacity: 1;
   transform: translateY(0);
 }
 
-
-.dashboard-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  width: 100%;
-  max-width: 950px;
-  margin: 0 auto;
-  padding: 2rem;
-  justify-items: center;
-
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
-
-  .dashboard-item {
-    width: 100%;
-
-    &.full {
-      grid-column: span 2;
-
-      @media (max-width: 768px) {
-        grid-column: span 1;
-      }
-    }
-
-    &.half {
-      grid-column: span 1;
-
-      @media (max-width: 768px) {
-        grid-column: span 1;
-      }
-    }
-  }
+footer {
+  color: white;
 }
 
 .loading-screen {
@@ -110,5 +113,20 @@ body {
 @keyframes spin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1.5rem;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    justify-items: stretch;
+  }
+
+  footer {
+    padding: 1rem 1.5rem;
+    font-size: 0.9rem;
+    text-align: center;
   }
 }

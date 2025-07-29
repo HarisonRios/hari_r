@@ -3,18 +3,27 @@
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
-  background-color: #121212;
   color: white;
-  width: 52%;
+  width: 60%;
   max-width: 1000px;
   margin: 0 auto;
 
-  .left {
-    font-size: 1.5rem;
+   .left {
+     font-size: 1.5rem;
+     margin-right: 2rem;
+     display: flex;
+     gap: 10rem;
 
     .purple-text {
       color: #9b59b6;
       font-weight: bold;
+    }
+    
+    span:hover {
+    color: #9d0093;
+    cursor: pointer;
+    transition: color 0.3s ease;
+
     }
   }
 
@@ -32,7 +41,6 @@
         color: #9b59b6;
       }
 
-      // Tooltip
       &::after {
         content: attr(aria-label);
         position: absolute;
@@ -55,5 +63,34 @@
         opacity: 1;
       }
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .navbar .left {
+    font-size: 1rem;
+    flex-shrink: 0;
+    margin-right: 0rem;
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .navbar .right {
+    width: auto;
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    font-size: 1rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
   }
 }
