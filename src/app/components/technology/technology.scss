@@ -8,6 +8,7 @@
   width: 60%;
   max-width: 1000px;
   
+
   &.half {
     grid-column: span 1;
   }
@@ -27,7 +28,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 90px; // menor
+    width: 90px; 
     height: 48px;
     position: relative;
     cursor: pointer;
@@ -38,7 +39,7 @@
     }
 
     .icon {
-      font-size: 30px; // menor
+      font-size: 30px; 
 
       &::after {
         content: attr(data-tooltip);

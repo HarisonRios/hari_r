@@ -43,7 +43,6 @@ body {
  }
 
 
-
 .background-gradient {
   position: absolute;
   inset: 0;
@@ -70,6 +69,16 @@ body {
 .main-content.reveal {
   opacity: 1;
   transform: translateY(0);
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap; 
+  gap: 2rem; 
+  width: 60%;
+  max-width: 1000px;
 }
 
 footer {
@@ -129,4 +138,10 @@ footer {
     font-size: 0.9rem;
     text-align: center;
   }
+
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
 }
+

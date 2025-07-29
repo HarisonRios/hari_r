@@ -1,13 +1,14 @@
 import { FaLinkedin ,FaGithub, FaDiscord, FaInstagram, FaEnvelope } from "react-icons/fa";
 import { discord_url, email_url, github_url, instagram_url, linkedin_url } from "../components/constants/types";
+import Link from "next/link";
   
 export default function Navbar() {
   return (
     <>
      <nav className="navbar">
       <div className="left">
-        <span className="purple-text">/</span>
-        <span className="purple-text">project</span>
+        <Link href="/" className="purple-text"> / </Link>
+        <Link href="/project" className="purple-text"> projects </Link>
       </div>
       <div className="right">
         <a href={github_url} target="_blank" rel="noopener noreferrer" aria-label="HarisonRios">

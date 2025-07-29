@@ -67,13 +67,14 @@ export default function Home() {
       <main className="main-content" ref={mainRef}>
         <Navbar />
         <AboutMe />
-        
-        {data && <Temperature locationData={data.kv} />}
-        {/* <Spotify spotify={spotify} />
-        <Discord data={data} />
-        <Technology /> */}
 
+        <div className="card-container">
+           {data && <Temperature locationData={data.kv} />}
+           <Technology />
+        </div>
 
+        <Spotify spotify={spotify} />
+        {/* <Discord data={data} /> */}
 
         <footer>
           <p>© 2025 Harison Rios. Todos os direitos reservados.</p>

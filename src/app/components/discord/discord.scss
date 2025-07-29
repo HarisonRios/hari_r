@@ -2,14 +2,18 @@
   position: relative;
   display: flex;
   gap: 1rem;
-  background: #1e1e1e;
+  background: rgba(30, 30, 30, 0.4);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border: 1px solid #333;
+  color: #fff;
   padding: 1rem;
   border-radius: 12px;
-  color: white;
-  max-width: 400px;
   align-items: center;
+
+  
+  width: 57%;
+  max-width: 1000px;
+
 }
 
 .discord-icon {
