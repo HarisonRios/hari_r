@@ -9,6 +9,7 @@ export default function Navbar() {
       <div className="left">
         <Link href="/" className="purple-text"> / </Link>
         <Link href="/project" className="purple-text"> projects </Link>
+        <Link href="/contact" className="purple-text"> contact </Link>
       </div>
       <div className="right">
         <a href={github_url} target="_blank" rel="noopener noreferrer" aria-label="HarisonRios">

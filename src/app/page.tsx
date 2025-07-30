@@ -74,7 +74,8 @@ export default function Home() {
         </div>
 
         <Spotify spotify={spotify} />
-        {/* <Discord data={data} /> */}
+
+        <Discord data={data} />
 
         <footer>
           <p>© 2025 Harison Rios. Todos os direitos reservados.</p>

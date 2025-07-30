@@ -9,8 +9,10 @@ type Props = {
 };
 
 export default function Discord({ data }: Props) {
+  if (!data || !data.discord_user) return null; 
+
   const user = data.discord_user;
-  const activity = data.activities?.[0]; // primeira atividade
+  const activity = data.activities?.[0];
   const avatarUrl = `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png`;
 
   function getActivityIcon(name: string) {
