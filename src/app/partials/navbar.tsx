@@ -1,5 +1,5 @@
 import { FaLinkedin ,FaGithub, FaDiscord, FaInstagram, FaEnvelope } from "react-icons/fa";
-import { discord_url, email_url, github_url, instagram_url, linkedin_url } from "../components/constants/types";
+import { discord_url, email_url, github_url, instagram_url, linkedin_url } from "../../../hooks/types";
 import Link from "next/link";
   
 export default function Navbar() {

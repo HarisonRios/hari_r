@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { WiDaySunny } from "react-icons/wi";
-import { TemperatureProps } from "@/app/components/constants/types";
+import { TemperatureProps } from "../../hooks/types";
 import "./temperature.scss";
 
 export default function Temperature({ locationData }: TemperatureProps) {

@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from "react";
-import "../../../styles/globals.scss";
+import "../../styles/globals.scss";
 
 export default function BackgroundEffect() {
   const gradientRef = useRef<HTMLDivElement>(null);

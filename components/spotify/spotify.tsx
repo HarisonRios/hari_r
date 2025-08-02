@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { SpotifyData } from "@/app/components/constants/types";
+import { SpotifyData } from "../../hooks/types";
 import { FaMusic, FaTimesCircle } from "react-icons/fa";
 import Image from "next/image";
 import "./spotify.scss";

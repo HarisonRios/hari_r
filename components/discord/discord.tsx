@@ -1,6 +1,6 @@
 import Image from "next/image";
 import "./discord.scss";
-import { DiscordData } from "@/app/components/constants/types";
+import { DiscordData } from "../../hooks/types";
 import { FaSpotify, FaCode } from "react-icons/fa";
 import { BsDiscord } from "react-icons/bs";
 
