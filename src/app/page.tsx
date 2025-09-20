@@ -1,18 +1,18 @@
 "use client";
 
-import "../../styles/globals.scss";
+import "./styles/globals.scss";
 import axios from "axios";
 import { useEffect, useState, useRef } from "react";
 
-import Spotify from "../../components/spotify/spotify";
-import Discord from "../../components/discord/discord";
-import Technology from "../../components/technology/technology";
-import AboutMe from "../../components/aboutme/aboutme";
-import Temperature from "../../components/temperature/temperature";
+import Spotify from "./components/spotify/spotify";
+import Discord from "./components/discord/discord";
+import Technology from "./components/technology/technology";
+import AboutMe from "./components/aboutme/aboutme";
+import Temperature from "./components/temperature/temperature";
 
 
-import Navbar from "./partials/navbar";
-import BackgroundEffect from "../../components/background/BackgroundEffect";
+import Navbar from "./components/navbar/navbar";
+import BackgroundEffect from "./components/background/BackgroundEffect";
 
 export default function Home() {
   const [data, setData] = useState<any>(null);
