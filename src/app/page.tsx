@@ -1,5 +1,6 @@
 "use client";
 
+import "../../styles/globals.scss";
 import axios from "axios";
 import { useEffect, useState, useRef } from "react";
 
@@ -9,7 +10,7 @@ import Technology from "../../components/technology/technology";
 import AboutMe from "../../components/aboutme/aboutme";
 import Temperature from "../../components/temperature/temperature";
 
-import "../../styles/globals.scss";
+
 import Navbar from "./partials/navbar";
 import BackgroundEffect from "../../components/background/BackgroundEffect";
 

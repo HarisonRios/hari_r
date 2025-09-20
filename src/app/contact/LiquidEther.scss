@@ -1,0 +1,23 @@
+body {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* ocupa a altura da tela toda */
+  background:
+    radial-gradient(circle at 70% 30%, rgba(255, 0, 255, 0.2), transparent 400px),
+    radial-gradient(circle at 20% 80%, rgba(225, 0, 255, 0.15), transparent 350px),
+    radial-gradient(circle at 40% 10%, rgba(128, 0, 255, 0.1), transparent 300px),
+    radial-gradient(circle at 90% 90%, rgba(255, 20, 147, 0.08), transparent 250px),
+    #08001c;
+    overflow: hidden;
+}
+
+
+.liquid-ether-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  touch-action: none;
+}
