@@ -1,0 +1,9 @@
+.darkveil-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;   /* garantir largura total da viewport */
+  height: 100vh;  /* altura total da viewport */
+  z-index: -1;
+  display: block;
+}

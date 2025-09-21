@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "axios": "^1.10.0",
+    "framer-motion": "^12.23.16",
     "gsap": "^3.13.0",
     "next": "15.3.3",
     "ogl": "^1.0.11",

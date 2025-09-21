@@ -11,44 +11,10 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-color: #0d0d1f;
+  height: 100%;   /* garantir altura total */
   min-height: 100%;
   overflow-x: hidden;
   font-family: system-ui, sans-serif;
-}
-
-.background-wrapper {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.background-base {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 70% 30%, rgba(255, 0, 255, 0.2), transparent 400px),
-    radial-gradient(circle at 20% 80%, rgba(225, 0, 255, 0.15), transparent 350px),
-    radial-gradient(circle at 40% 10%, rgba(128, 0, 255, 0.1), transparent 300px),
-    radial-gradient(circle at 90% 90%, rgba(255, 20, 147, 0.08), transparent 250px),
-    #08001c; 
-  background-blend-mode: screen;
-  z-index: 0;
-
-  transition: background 0.5s ease;
-  opacity: 0.9; /* Um pouco mais opaco para realçar as cores */
-  will-change: background-position;
-  overflow: hidden;
-}
-
-
-.background-gradient {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: transparent;
-  transition: background-position 0.2s ease;
 }
 
 
