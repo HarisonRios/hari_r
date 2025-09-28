@@ -12,6 +12,7 @@ import Temperature from "./components/temperature/temperature";
 
 import Navbar from "./components/navbar/navbar";
 import BackgroundEffect from "./components/background/backgroundEffect";
+import CardNav from "./contact/Navbar";
 
 
 export default function Home() {
@@ -65,8 +66,9 @@ export default function Home() {
 
       <BackgroundEffect />
 
+        <CardNav />
       <main className="main-content" ref={mainRef}>
-        <Navbar />
+        {/* <Navbar /> */}
         <AboutMe />
 
         <div className="card-container">
